@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#173d32">
+    <title>Intercambio de Navidad</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <main id="app">
+        <section class="pantalla-inicio">
+            <a class="decoracion-superior" href="admin/admin.html">✦ ❄ ✦</a>
+          
+            <p class="etiqueta-navidad">
+                INTERCAMBIO NAVIDEÑO 2026
+            </p>
+
+            <h1>La magia de regalar</h1>
+
+            <p class="descripcion">
+                Descubre quién será la persona a quien
+                le entregarás un regalo esta Navidad.
+            </p>
+
+            <div id="acceso-participante">
+                <label for="participante">
+                    Selecciona tu nombre
+                </label>
+
+                <select id="participante">
+                    <option value="">Cargando participantes...</option>
+                </select>
+
+                <label for="pin">
+                    Tu PIN de acceso
+                </label>
+
+                <input
+                    type="password"
+                    id="pin"
+                    inputmode="numeric"
+                    maxlength="4"
+                    placeholder="••••"
+                    autocomplete="off"
+                >
+
+                <button id="confirmar-identidad" disabled>
+                    Continuar
+                </button>
+            </div>
+
+            <div id="zona-ruleta" hidden>
+                <!-- Aquí dibujaremos la ruleta -->
+                <canvas id="ruleta"></canvas>
+
+                <button id="girar-ruleta" disabled>
+                    Revelar mi resultado
+                </button>
+            </div>
+
+            <div id="resultado" hidden></div>
+
+            <div id="mensaje" role="status"></div>
+
+            <div class="decoracion-inferior">✧ ❄ ✧</div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="app.js"></script>
+</body>
+</html>

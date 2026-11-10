@@ -1,0 +1,254 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+    --verde: #173d32;
+    --verde-claro: #285747;
+    --vino: #792e3b;
+    --dorado: #c6a15b;
+    --crema: #f8f3e9;
+    --blanco: #fffdf8;
+    --texto: #29382f;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 10% 10%, #315b4933, transparent 35%),
+        radial-gradient(circle at 90% 90%, #792e3b22, transparent 35%),
+        var(--verde);
+    color: var(--texto);
+    font-family: 'DM Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 14px;
+}
+
+#app {
+    width: 100%;
+    max-width: 520px;
+}
+
+.pantalla-inicio {
+    position: relative;
+    overflow: hidden;
+    background: var(--crema);
+    border: 2px solid var(--dorado);
+    border-radius: 24px;
+    padding: 34px 24px;
+    text-align: center;
+    box-shadow: 0 18px 55px #00000035;
+}
+
+.decoracion-superior,
+.decoracion-inferior {
+    color: var(--dorado);
+    letter-spacing: 12px;
+    font-size: 22px;
+}
+
+.decoracion-superior {
+    margin-bottom: 22px;
+}
+
+.decoracion-inferior {
+    margin-top: 30px;
+}
+
+.etiqueta-navidad {
+    color: var(--vino);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+h1 {
+    color: var(--verde);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 8vw, 43px);
+    line-height: 1.15;
+    margin: 14px 0;
+}
+
+.descripcion {
+    max-width: 340px;
+    margin: 0 auto 30px;
+    color: #69746c;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+#acceso-participante {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    text-align: left;
+}
+
+label {
+    color: var(--verde);
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 8px;
+}
+
+select,
+input {
+    width: 100%;
+    min-height: 49px;
+    padding: 12px 14px;
+    border: 1px solid #d8d0bf;
+    border-radius: 10px;
+    background: var(--blanco);
+    color: var(--texto);
+    font: inherit;
+    outline: none;
+}
+
+select:focus,
+input:focus {
+    border-color: var(--dorado);
+    box-shadow: 0 0 0 3px #c6a15b25;
+}
+
+input {
+    letter-spacing: 7px;
+    text-align: center;
+    font-size: 18px;
+}
+
+button {
+    width: 100%;
+    min-height: 50px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 10px;
+    background: var(--verde);
+    color: white;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+button:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+button:hover:not(:disabled) {
+    background: var(--verde-claro);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#zona-ruleta {
+    width: 100%;
+}
+
+#ruleta {
+    display: block;
+    width: 100%;
+    max-width: 410px;
+    height: auto;
+    margin: 15px auto;
+}
+
+#resultado {
+    margin-top: 25px;
+    padding: 22px 14px;
+    border: 1px solid var(--dorado);
+    border-radius: 14px;
+    background: var(--blanco);
+}
+
+#mensaje {
+    margin-top: 15px;
+    color: var(--vino);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 380px) {
+    .pantalla-inicio {
+        padding: 26px 17px;
+    }
+}
+
+#zona-ruleta {
+    position: relative;
+}
+
+#zona-ruleta::before {
+    content: "▼";
+    position: absolute;
+    z-index: 5;
+    top: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--dorado);
+    font-size: 35px;
+    line-height: 1;
+    text-shadow: 0 2px 4px #00000035;
+    pointer-events: none;
+}
+
+#ruleta {
+    transform-origin: center center;
+    border-radius: 50%;
+    filter: drop-shadow(0 7px 10px #00000030);
+}
+
+#resultado h2 {
+    color: var(--vino);
+    font-family: 'Playfair Display', serif;
+}
+
+#resultado h1 {
+    overflow-wrap: anywhere;
+}
+
+.pantalla-inicio {
+    position: relative;
+}
+
+.estrella-caida {
+    position: absolute;
+    top: -25px;
+    z-index: 20;
+    color: var(--dorado);
+    pointer-events: none;
+    animation: caer-estrella 4s ease-in forwards;
+}
+
+@keyframes caer-estrella {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    12% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: translateY(900px) rotate(540deg);
+        opacity: 0;
+    }
+}
