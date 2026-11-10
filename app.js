@@ -492,7 +492,7 @@ function girarRuleta() {
 
     giroEnCurso = true;
     botonRuleta.disabled = true;
-    botonRuleta.textContent = "¡La suerte está echada!";
+    botonRuleta.textContent = "¡Suerte!";
 
     const cantidad = participantes.length;
     const segmento = (Math.PI * 2) / cantidad;
@@ -538,11 +538,11 @@ function finalizarGiro() {
     zonaResultado.hidden = false;
 
     zonaResultado.innerHTML = `
-        <p class="etiqueta-navidad">TU REGALO DE NAVIDAD</p>
-        <h2>¡Te tocó!</h2>
+        <p class="etiqueta-navidad">TU INTERCAMBIO DE NAVIDAD</p>
+        <h2>¡Te tocó...!</h2>
         <p>La persona a quien le regalarás es:</p>
         <h1>${escaparHTML(destinatarioObtenido)}</h1>
-        <p>¡Que comience la magia navideña! ✨</p>
+        <p>¡Felices FIestas! ✨</p>
     `;
 
     mensaje.textContent = "Tu resultado quedó registrado.";
@@ -585,11 +585,11 @@ function mostrarResultadoAnterior() {
     zonaResultado.hidden = false;
 
     zonaResultado.innerHTML = `
-        <p class="etiqueta-navidad">TU REGALO DE NAVIDAD</p>
+        <p class="etiqueta-navidad">TU INTERCAMBIO DE NAVIDAD</p>
         <h2>¡Qué bueno verte de nuevo!</h2>
         <p>La persona a quien le regalarás es:</p>
         <h1>${escaparHTML(destinatarioObtenido)}</h1>
-        <p>¡Que comience la magia navideña! ✨</p>
+        <p>¡Felices Fiestas! ✨</p>
     `;
 
     mensaje.textContent = "";
