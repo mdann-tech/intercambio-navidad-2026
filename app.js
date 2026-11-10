@@ -542,7 +542,7 @@ function finalizarGiro() {
         <h2>¡Te tocó...!</h2>
         <p>La persona a quien le regalarás es:</p>
         <h1>${escaparHTML(destinatarioObtenido)}</h1>
-        <p>¡Felices FIestas! ✨</p>
+        <p>¡Felices Fiestas! ✨</p>
     `;
 
     mensaje.textContent = "Tu resultado quedó registrado.";
