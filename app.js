@@ -21,7 +21,7 @@ let destinatarioObtenido = null;
 // Cargar participantes desde Supabase
 async function cargarParticipantes() {
     try {
-        mensaje.textContent = "Preparando el intercambio...";
+        mensaje.textContent = "Felices Fiestas...";
 
         const { data, error } = await supabaseClient.rpc(
             "listar_participantes",
